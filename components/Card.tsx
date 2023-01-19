@@ -32,7 +32,7 @@ function Card(props: CardProps) {
   return (
     <Link
       onClick={() => dispatch(setPokemon(localPokemon))}
-      href={""}
+      href={String(props.id)}
       className="mx-6 my-5"
     >
       <div className="flex flex-col items-center border rounded-[15px] pt-6 px-[52.17px] drop-shadow-[0_6px_32px_rgba(0,0,0,6%)] bg-white">
