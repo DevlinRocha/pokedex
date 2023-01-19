@@ -33,32 +33,80 @@ export default function Detail() {
           })}
         </div>
       </div>
-      <section className="flex justify-center p-4">
-        {[
-          { name: "hp", display: "HP" },
-          { name: "attack", display: "Attack" },
-          { name: "defense", display: "Defense" },
-        ].map((stat, index) => {
-          return (
-            <div
-              className="flex flex-col items-center justify-center p-4 m-4 bg-[#F3F3F3] rounded-3xl max-w-[158.67px] w-full max-h-[134px] h-[134px]"
-              key={index}
-            >
-              {pokemon.pokemon.stats.map((statData) => {
-                return (
-                  statData.stat.name === stat.name && (
-                    <span className="text-[32px] font-bold leading-[48px] text-black pb-4">
-                      {statData.base_stat}
-                    </span>
-                  )
-                );
-              })}
-              <span className="text-[#888] leading-[21.79px] font-['Open_Sans']">
-                {stat.display}
-              </span>
-            </div>
-          );
-        })}
+      <section className="flex flex-col items-center">
+        <div className="flex justify-center p-4 w-full">
+          {[
+            { name: "hp", display: "HP" },
+            { name: "attack", display: "Attack" },
+            { name: "defense", display: "Defense" },
+          ].map((stat, index) => {
+            return (
+              <div
+                className="flex flex-col items-center justify-center p-4 m-4 bg-[#F3F3F3] rounded-3xl max-w-[158.67px] w-full max-h-[134px] h-[134px]"
+                key={index}
+              >
+                {pokemon.pokemon.stats.map((statData) => {
+                  return (
+                    statData.stat.name === stat.name && (
+                      <span className="text-[32px] font-bold leading-[48px] text-black pb-4">
+                        {statData.base_stat}
+                      </span>
+                    )
+                  );
+                })}
+                <span className="text-[#888] leading-[21.79px] font-['Open_Sans']">
+                  {stat.display}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="w-[540px]">
+          <div className="flex w-full justify-between">
+            <span className="text-lg text-[#999] leading-[27px] font-['Open_Sans']">
+              Base XP
+            </span>
+            <span className="font-bold text-lg leading-[27px] font-['Open_Sans']">
+              {pokemon.pokemon.base_experience}
+            </span>
+          </div>
+
+          <div className="w-full bg-[#EEE] h-0.5 my-6" />
+
+          <div className="flex w-full justify-between">
+            <span className="text-lg text-[#999] leading-[27px] font-['Open_Sans']">
+              Height
+            </span>
+            <span className="font-bold text-lg leading-[27px] font-['Open_Sans']">
+              {pokemon.pokemon.height}
+            </span>
+          </div>
+
+          <div className="w-full bg-[#EEE] h-0.5 my-6" />
+
+          <div className="flex w-full justify-between">
+            <span className="text-lg text-[#999] leading-[27px] font-['Open_Sans']">
+              Weight
+            </span>
+            <span className="font-bold text-lg leading-[27px] font-['Open_Sans']">
+              {pokemon.pokemon.weight}
+            </span>
+          </div>
+
+          <div className="w-full bg-[#EEE] h-0.5 my-6" />
+
+          <div className="flex w-full justify-between">
+            <span className="text-lg text-[#999] leading-[27px] font-['Open_Sans']">
+              Abilities
+            </span>
+            <span className="font-bold text-lg leading-[27px] font-['Open_Sans']">
+              {pokemon.pokemon.abilities.map((ability, index) => (
+                <span key={index}>{ability.ability.name}, </span>
+              ))}
+            </span>
+          </div>
+        </div>
       </section>
     </div>
   );
