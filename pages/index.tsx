@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Pokeball from "../public/Pokéball.svg";
+import Card from "@/components/Card";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="p-10 text-[#222] font-['Poppins']">
+      <main className="p-10 text-[#222] font-['Poppins'] bg-[#FEFEFE] w-full h-screen">
         <header className="flex flex-col items-center pb-20">
           <h1 className="flex items-center">
             <Image src={Pokeball} alt="Pokéball" width={36} height={36} />
@@ -31,6 +32,12 @@ export default function Home() {
             https://pokeapi.co/api/v2/pokemon/
           </span>
         </header>
+
+        <section className="flex flex-wrap justify-center">
+          {[1, 2, 3, 4, 5, 6].map((id) => {
+            return <Card id={id} key={id} />;
+          })}
+        </section>
       </main>
     </>
   );
