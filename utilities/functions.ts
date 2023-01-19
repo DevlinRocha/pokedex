@@ -1,4 +1,6 @@
 export function capitalize(string: string) {
+  if (!string) return;
+
   return string
     .split(" ")
     .map((word) => {
