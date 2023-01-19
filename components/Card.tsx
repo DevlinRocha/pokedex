@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { capitalize } from "@/utilities/functions";
 
 interface CardProps {
   id: number;
@@ -42,7 +43,7 @@ function Card(props: CardProps) {
           #{String(props.id).padStart(3, "0")}
         </span>
         <span className="pb-6 font-bold text-lg leading-[27px]">
-          {pokemon.name}
+          {capitalize(pokemon.name)}
         </span>
       </div>
     </div>
