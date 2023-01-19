@@ -28,7 +28,7 @@ export default function Home() {
             to populate it with the data you receive.
           </span>
 
-          <span className="bg-[#E6E6E6] rounded font-semibold leading-6 font-mono">
+          <span className="bg-[#E6E6E6] px-1.5 py-0.5 rounded font-semibold leading-6 font-mono">
             https://pokeapi.co/api/v2/pokemon/
           </span>
         </header>
