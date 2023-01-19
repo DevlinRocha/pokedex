@@ -17,7 +17,7 @@ export interface PokemonInterface {
   abilities: PokemonAbilitiesInterface[];
 }
 
-interface PokemonTypeInterface {
+export interface PokemonTypeInterface {
   slot: number;
   name: string;
   url: string;
